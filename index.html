@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://tinyurl.com/yy7km3mk.jpg"
+      type="image/x-icon"
+    />
+    <title>Astronomy</title>
+    <style>
+      body {
+        background: url("https://images.pexels.com/photos/5266990/pexels-photo-5266990.jpeg");
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        color: aliceblue;
+        backdrop-filter: blur(5px);
+      }
+      header {
+        margin: -10px;
+        padding: 5px;
+        display: flex;
+        /* background-color: rgb(240, 248, 255,0.2); */
+        justify-content: space-between;
+        align-items: center;
+        backdrop-filter: blur(5px);
+      }
+
+      .left {
+        display: flex;
+        align-items: center;
+      }
+
+      .left span {
+        background: linear-gradient(to right, orange, white, green);
+        background-clip: text;
+        color: transparent;
+        font-size: 35px;
+      }
+
+      .left img {
+        margin-right: 25px;
+        border-radius: 50px;
+        transform: rotate(35deg);
+        width: 70px;
+        height: 70px;
+      }
+
+      .rgt {
+        margin-right: 50px;
+        display: flex;
+        gap: 30px;
+      }
+
+      .rgt a {
+        text-decoration: none;
+        color: silver;
+        font-size: 20px;
+      }
+
+      a.active {
+        color: orange;
+      }
+      .hero {
+        text-align: center;
+        padding: 80px 20px;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+        background: linear-gradient(to right, #ff9933, #ffffff, #138808);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .info-section {
+        max-width: 1100px;
+        margin: 20px auto;
+        padding: 40px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 15px;
+        text-align: center;
+        line-height: 1.8;
+      }
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        width: 400px;
+        overflow: hidden;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      }
+      .card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+      .card-content {
+        padding: 20px;
+        text-align: center;
+      }
+      .card-content h3 {
+        color: #ff9933;
+        margin-bottom: 10px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 25px;
+        background: linear-gradient(45deg, #ff9933, #ff5e00);
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+      footer {
+        background: rgba(0, 0, 0, 0.9);
+        color: #fff;
+
+        margin-top: 50px;
+        border-top: 3px solid orange;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+        padding: 0 15px;
+      }
+      .footer-section h3 {
+        color: orange;
+        margin-bottom: 15px;
+        font-size: 1.2em;
+      }
+      .footer-section p {
+        font-size: 0.9em;
+        line-height: 1.6;
+        color: #ccc;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+      }
+      .footer-section ul li {
+        margin-bottom: 8px;
+      }
+      .footer-section ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .footer-section ul li a:hover {
+        color: orange;
+      }
+      .footer-bottom {
+        text-align: center;
+        /* margin-top: 20px; */
+        /* padding-top: 20px; */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 18px;
+        color: #e3d7d7;
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        margin-right: 20px;
+      }
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        border-radius: 2px;
+      }
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+        .rgt {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 80px;
+          right: 0;
+          background: rgba(0, 0, 0, 0.9);
+          width: 100%;
+          text-align: center;
+          padding: 20px 0;
+          gap: 15px;
+          z-index: 1000;
+        }
+        .rgt.active {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <img
+          src="data:image/jpeg;base64,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"
+          alt="space logo"
+        /><span title="Indian Space Agency">ISA</span>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="rgt">
+        <a class="active" href="">Home</a>
+        <a href="Telescopes.html">Telescopes</a>
+        <a href="Planets.html">Planets</a>
+        <a href="Satellites.html">Satellites</a>
+        <a href="Findings.html">Findings</a>
+
+        <a href="AboutUs.html">About Us</a>
+      </div>
+    </header>
+
+    <div class="hero">
+      <h1>Indian Space Agency</h1>
+      <p>Touching Lives while Touching the Moon</p>
+    </div>
+
+    <div class="info-section">
+      <h2>Gateway to the Cosmos</h2>
+      <p>
+        The Indian Space Agency (ISA) is the pioneer space exploration agency of
+        the Government of India. Our vision is to harness space technology for
+        national development, while pursuing space science research and
+        planetary exploration. From launching satellites that connect our nation
+        to exploring the mysteries of the Moon and Mars, ISA is committed to
+        excellence in space science.
+      </p>
+    </div>
+
+    <div class="card-container">
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/2034892/pexels-photo-2034892.jpeg?auto=compress&cs=tinysrgb&w=600"
+          alt="Telescopes"
+        />
+        <div class="card-content">
+          <h3>Telescopes</h3>
+          <p>Discover the instruments that allow us to see beyond our world.</p>
+          <a href="Telescopes.html" class="btn">Explore</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/87651/earth-blue-planet-globe-planet-87651.jpeg?auto=compress&cs=tinysrgb&w=600"
+          alt="Planets"
+        />
+        <div class="card-content">
+          <h3>Planets</h3>
+          <p>
+            Journey through the solar system and explore our celestial
+            neighbors.
+          </p>
+          <a href="Planets.html" class="btn">Planets</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/586056/pexels-photo-586056.jpeg?auto=compress&cs=tinysrgb&w=600"
+          alt="Satellites"
+        />
+        <div class="card-content">
+          <h3>Satellites</h3>
+          <p>
+            Learn about the artificial moons orbiting Earth for communication
+            and research.
+          </p>
+          <a href="Satellites.html" class="btn">Satellites</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&w=600"
+          alt="Findings"
+        />
+        <div class="card-content">
+          <h3>Findings</h3>
+          <p>Read about the latest discoveries and scientific breakthroughs.</p>
+          <a href="Findings.html" class="btn">Discoveries</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h3>Indian Space Agency</h3>
+          <p>
+            Touching Lives while Touching the Moon. Exploring the cosmos for a
+            better tomorrow.
+          </p>
+        </div>
+        <div class="footer-section links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="Telescopes.html">Telescopes</a></li>
+            <li><a href="Planets.html">Planets</a></li>
+            <li><a href="Satellites.html">Satellites</a></li>
+            <li><a href="Findings.html">Findings</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contact Us</h3>
+          <p>Email: info@isa.gov.in</p>
+          <p>Phone: +91 9542XXXXXX</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Indian Space Agency. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      function toggleMenu() {
+        const menu = document.querySelector(".rgt");
+        menu.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
