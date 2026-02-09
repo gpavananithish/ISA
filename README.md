@@ -1,5 +1,5 @@
 # 🚀 Indian Space Agency (ISA) Website
-
+Check this At: https://gpavananithish.github.io/ISA/
 ![Space Banner](https://images.pexels.com/photos/5266990/pexels-photo-5266990.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
 
 Welcome to the official repository for the **Indian Space Agency (ISA)** website! This project is a static website designed to showcase the wonders of the cosmos, India's achievements in space technology, and general astronomical knowledge.
@@ -53,17 +53,6 @@ Since this is a static website, you don't need any backend server or complex ins
 3.  **Open `index.html`:**
     Simply double-click the `index.html` file to open it in your default web browser.
 
-## 📸 Screenshots
-
-|                                         Home Page                                          |                                            Satellites Page                                             |
-| :----------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------: |
-| <img src="https://via.placeholder.com/300x160?text=Home+Page" alt="Home Page" width="300"> | <img src="https://via.placeholder.com/300x160?text=Satellites+Page" alt="Satellites Page" width="300"> |
-
-|                                           Planets Page                                           |                                          Mobile Menu                                           |
-| :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------: |
-| <img src="https://via.placeholder.com/300x160?text=Planets+Page" alt="Planets Page" width="300"> | <img src="https://via.placeholder.com/300x160?text=Mobile+View" alt="Mobile View" width="300"> |
-
-_(Note: Replace the placeholder links above with actual screenshots of your website once hosted or captured!)_
 
 ## 🤝 Contributing
 
@@ -82,3 +71,4 @@ This project is open-source and available under the MIT License.
 ---
 
 <p align="center">Made with ❤️ and ☕ by the ISA Web Team</p>
+
